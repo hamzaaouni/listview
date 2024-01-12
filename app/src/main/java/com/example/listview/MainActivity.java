@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         String userage = age.getText().toString();
         String id = databaseUsers.push().getKey();
 
-        User user = new User(username, useremail, userage);
+        User user = new User(id, username, useremail, userage);
         databaseUsers.child("Users").child(id).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
